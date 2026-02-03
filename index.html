@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+<title>Portfolio Split Layout</title>
+<link rel="stylesheet" href="css/style.css">
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- slickのJS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- あなたのJS -->
+<script src="main.js"></script>
+<!-- slickのCSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+</head>
+
+<!-- モーダル -->
+<div class="modal" id="work-modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-body"></div> <!-- 中身を入れ替える場所 -->
+  </div>
+</div>
+
+
+<body>
+    <header>
+        <div class="logo">
+			<a href=""><img src="images/logo6.png" alt="logo"></a>
+		</div>
+		<div class="menu dela">
+			<a href="#work">WORK</a>
+			<a href="#profile">PROFILE</a>
+			<a href="#hobby">HOBBY</a>
+		</div>
+    </header>
+
+    <div class="container">
+        <div class="content-left">
+			<div class="left-inner">
+				<p class="txt_f dela">meow</p>
+				<p class="txt_s dela">meow</p>
+				<!-- <img class="logo" src="images/logo7.svg" alt="logo"> -->
+				<!-- 胴体 -->
+				<img class="cat cat-body" src="images/visual_fuselage.svg" alt="cat body">
+				<!-- しっぽ -->
+				<img class="cat cat-tail" src="images/visual_tail.svg" alt="cat tail">
+				<img class="star" src="images/star.png" alt="mv">
+			</div>
+        </div>
+        <div class="content-right">
+			<div class="right-inner">
+				<div class="mv">
+					<p class="title dela">Welcome to my portfolio!</p>
+					<img class="logo" src="images/cat7.png" alt="cat">
+					<p class="sub-title dela">Please take your time to look around!</p>
+				</div>
+	            <div class="section top-work" id="work">
+					<h2>WORK</h2>
+					<a class="work-btn work1 open-modal"
+					   href="#"
+					   data-content='
+					     <h4>HP制作</h4>
+					     <h5>コーベヤスポーツ株式会社 様</h5>
+						 <a class="url" href="https://kobeya-sp.co.jp/">https://kobeya-sp.co.jp/</a>
+						 <img src="images/work/kobeya1.png" alt="">
+						 <p>「人の元気を、デザインする」という企業理念に合わせて、
+							POPなデザインに仕上げました。<br>
+							企業ロゴの色である青色をメインカラーとしました。</p>
+					     <div class="flex">
+					       <div class="img"><img src="images/work/kobeya2.png" alt=""></div>
+					       <div class="img"><img src="images/work/kobeya3.png" alt=""></div>
+					     </div>
+						 <h5>あい皮ふ科クリニック 様</h5>
+ 						 <a class="url" href="https://ai-skin.clinic/">https://ai-skin.clinic/</a>
+ 						 <img src="images/work/ico1.png" alt="">
+ 						 <p>きれいめなデザインに仕上げました。</p>
+ 					     <div class="flex">
+ 					       <div class="img"><img src="images/work/ico2.png" alt=""></div>
+ 					       <div class="img"><img src="images/work/ico3.png" alt=""></div>
+ 					     </div>
+						 <h5>AXテックケア株式会社 様</h5>
+  						 <a class="url" href="https://axtechcare.com/">https://axtechcare.com/</a>
+						 <div class="flex">
+  					       <div class="img"><img src="images/work/ax1.png" alt=""></div>
+  					       <div class="img"><img src="images/work/ax2.png" alt=""></div>
+  					     </div>
+					'>
+					  <img src="images/work1.png" class="button updown"/>
+					</a>
+					<a class="work-btn work2 open-modal" 
+					   href="#"
+					   data-content='
+   					     <h4>バナー制作</h4>
+						 <h5>Le premier Cafe 様</h5>
+						 <img src="images/work/banner1.png" alt="">
+						 <img src="images/work/banner2.png" alt="">
+						 <img src="images/work/banner3.png" alt="">
+						 <div class="flex">
+							 <div class="img"><img src="images/work/banner4.png" alt=""></div>
+							 <div class="flex2">
+								 <div class="img"><img src="images/work/banner5.png" alt=""></div>
+								 <div class="img"><img src="images/work/banner6.png" alt=""></div>
+							 </div>
+						 </div>
+   					'>
+					  <img src="images/work2.png" class="button updown"/>
+					</a>
+					<a class="work-btn work3 open-modal" 
+					   href="#"
+					   data-content='
+   					     <h4>サムネイル制作</h4>
+						 <h5>遺品整理の相談所 様</h5>
+   					     <img src="images/work/catch1.png" alt="">
+						 <img src="images/work/catch2.png" alt="">
+						 <img src="images/work/catch3.png" alt="">
+						 <h5>PULMO 様</h5>
+						 <img src="images/work/catch4.png" alt="">
+						 <img src="images/work/catch5.png" alt="">
+   					'>
+					  <img src="images/work3.png" class="button updown"/>
+					</a>
+					<a class="work-btn work4 open-modal" 
+					   href="#"
+					   data-content='
+   					     <h4>記事中画像制作</h4>
+						 <h5>Le premier Cafe 様</h5>
+						 <img src="images/work/article14.png" alt="">
+						 <h5>Sansan株式会社 様</h5>
+						 <div class="flex mag"">
+  					       <div class="img"><img src="images/work/article1.png" alt=""></div>
+  					       <div class="img"><img src="images/work/article2.png" alt=""></div>
+						   <div class="img"><img src="images/work/article3.png" alt=""></div>
+						   <div class="img"><img src="images/work/article4.png" alt=""></div>
+						   <div class="img"><img src="images/work/article5.png" alt=""></div>
+						   <div class="img"><img src="images/work/article6.png" alt=""></div>
+						   <div class="img"><img src="images/work/article7.png" alt=""></div>
+						   <div class="img"><img src="images/work/article8.png" alt=""></div>
+						   <div class="img"><img src="images/work/article9.png" alt=""></div>
+						   <div class="img"><img src="images/work/article10.png" alt=""></div>
+						   <div class="img"><img src="images/work/article11.png" alt=""></div>
+						   <div class="img"><img src="images/work/article12.png" alt=""></div>
+						   <div class="img"><img src="images/work/article13.png" alt=""></div>				   
+  					     </div>
+   					'>
+					  <img src="images/work4.png" class="button updown"/>
+					</a>
+					<a class="work-btn work5 open-modal" 
+					   href="#"
+					   data-content='
+					    <h4>記事中画像制作</h4>
+						<h5>Le premier Cafe 様</h5>
+						<img src="images/work/article14.png" alt="">
+						<h5>Sansan株式会社 様</h5>
+						<div class="flex mag"">
+		 					<div class="img"><img src="images/work/article1.png" alt=""></div>
+		 					<div class="img"><img src="images/work/article2.png" alt=""></div>
+							<div class="img"><img src="images/work/article3.png" alt=""></div>
+							<div class="img"><img src="images/work/article4.png" alt=""></div>
+							<div class="img"><img src="images/work/article5.png" alt=""></div>
+							<div class="img"><img src="images/work/article6.png" alt=""></div>
+							<div class="img"><img src="images/work/article7.png" alt=""></div>
+							<div class="img"><img src="images/work/article8.png" alt=""></div>
+							<div class="img"><img src="images/work/article9.png" alt=""></div>
+							<div class="img"><img src="images/work/article10.png" alt=""></div>
+							<div class="img"><img src="images/work/article11.png" alt=""></div>
+							<div class="img"><img src="images/work/article12.png" alt=""></div>
+							<div class="img"><img src="images/work/article13.png" alt=""></div>				   
+	 					</div>
+   					'>
+					  <img src="images/work5.png" class="button updown"/>
+					</a>
+				</div>
+				<div class="cat-slider">
+			        <div class="slick-img">
+			          <img class="cat" src="images/cat2.png" alt="cat">
+			        </div>
+			        <div class="slick-img">
+			          <img class="cat" src="images/cat3.png" alt="cat">
+			        </div>
+			        <div class="slick-img">
+			          <img class="cat" src="images/cat4.png" alt="cat">
+			        </div>
+					<div class="slick-img">
+			          <img class="cat" src="images/cat5.png" alt="cat">
+			        </div>
+			        <div class="slick-img">
+			          <img class="cat" src="images/cat6.png" alt="cat">
+			        </div>
+			     </div>
+				 <div class="top-profile">
+					<h2 class="" id="profile">PROFILE</h2>
+					<div class="section profile">
+						<div class="profile-left"><img src="images/icon1.png" alt="icon"></div>
+						<div class="profile-right">
+							<p class="name dela">ICCHODA</p>
+							<p>2001年生まれ、広島県育ち。<br>
+							大学を卒業後、大阪のWEBサイト制作会社にWebデザイナーとして就職。<br>
+							WEBへの理解をより深めるためにJava+Python実践科の訓練校に通う。</p>
+							<p class="txt">現在は山口県で転職活動中！</p>
+							<div class="btm dela">
+								<p class="marker">猫が<br>だいすき</p>
+								<p class="marker">たま～に<br>お絵描き</p>
+								<p class="marker">音楽が<br>生きがい</p>
+							</div>
+							<p class="yellow dela">Take a peek at a hobby ▼▼</p>
+						</div>
+					</div>
+ 				</div>
+				<div class="top-hobby">
+					<h3 id="hobby">I Love Cat <3</h3>
+					<p class="msg">とにかく猫がだいすき</p>
+					<div class="img"><img class="cat" src="images/anko1.png" alt="anko"></div>
+					<div class="section hobby-cat">
+						<p class="txt">実家で飼っているあんこちゃんです</p>
+						<div class="img-box">
+							<div class="box"><img class="cat" src="images/anko3.jpg" alt="cat"></div>
+							<div class="box"><img class="cat" src="images/anko4.jpg" alt="cat"></div>
+							<div class="box"><img class="cat" src="images/anko5.jpg" alt="cat"></div>
+						</div>
+					</div>
+				</div>
+				<div class="top-hobby">
+					<h3>Sometimes drawing</h3>
+					<p class="msg">似顔絵を描いてプレゼントしたり・・・<br>笑顔をみるのがだいすき</p>
+					<div class="hobby-draw">
+						<div class="img-box">
+							<div class="box"><img src="images/draw1.png" alt="draw"></div>
+							<div class="box"><img src="images/draw2.png" alt="draw"></div>
+							<div class="box"><img src="images/draw3.png" alt="draw"></div>
+							<div class="box"><img src="images/draw4.png" alt="draw"></div>
+							<div class="box"><img src="images/draw5.png" alt="draw"></div>
+							<div class="box"><img src="images/draw6.png" alt="draw"></div>
+							<div class="box"><img src="images/draw7.png" alt="draw"></div>
+							<div class="box"><img src="images/draw8.png" alt="draw"></div>
+						</div>
+					</div>
+				</div>
+				<div class="top-hobby">
+					<h3>Music is my purpose in life:D</h3>
+					<p class="msg">ライブに行くことがが生きがい<br>
+					音楽がきっかけで出会えた友人とライブ会場で交流するのも好き<br>
+					MV撮影地など聖地巡りも好き<br>
+					あいみょんオタクです</p>
+					<div class="hobby-music">
+						<div class="item item1">
+							<div class="img">
+								<div class="parts"><img src="images/tele.png" alt="tele"></div>
+							</div>
+							<p>Tele</p>
+						</div>
+						<div class="item item2">
+							<p>YOASOBI</p>
+							<div class="img">
+								<div class="parts"><img src="images/yoasobi.png" alt="yoasobi"></div>
+							</div>
+						</div>
+						<div class="item item3">
+							<p>ずっと真夜中でいいのに。</p>
+							<div class="img">
+								<div class="parts parts1"><img src="images/ztmy1.png" alt="ztmy"></div>
+								<div class="parts parts2"><img src="images/ztmy2.png" alt="ztmy"></div>
+								<div class="parts parts3"><img src="images/ztmy3.png" alt="ztmy"></div>
+							</div>
+						</div>
+						<div class="item item4">
+							<div class="img">
+								<div class="parts"><img src="images/hige1.png" alt="official髭男dism"></div>
+								<div class="parts"><img src="images/hige2.png" alt="official髭男dism"></div>
+							</div>
+							<p>Official髭男dism</p>
+						</div>
+						<div class="fv-music">
+							<div class="fv-music-img txt dela">
+							  <p>My favorite..</p>
+							  <p class="big">あいみょん</p>
+							</div>
+							<div class="fv-music-img img1">
+							  <img src="images/aim1.png">
+							</div>
+							<div class="fv-music-img img2">
+							  <img src="images/aim2.png">
+							</div>
+							<div class="fv-music-img img3">
+							  <img src="images/aim3.png">
+							</div>
+							<div class="fv-music-img img4">
+							  <img src="images/aim4.png">
+							</div>
+							<div class="fv-music-img img5">
+							  <img src="images/aim5.png">
+							</div>
+							<div class="fv-music-img img6">
+							  <img src="images/aim6.png">
+							</div>
+							<div class="fv-music-img img7">
+							  <img src="images/aim7.png">
+							</div>
+							<div class="fv-music-img img8">
+							  <img src="images/aim8.png">
+							</div>
+							<div class="fv-music-img img9">
+							  <img src="images/aim9.png">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+            <footer>
+				<div class="footer-top">
+					<a href=""><img src="images/logo3.png" alt="logo"></a>
+				</div>
+				<div class="footer-menu dela">
+					<a href="#work">WORK</a>
+					<a href="#profile">PROFILE</a>
+					<a href="#hobby">HOBBY</a>
+				</div>
+				<div class="footer-btm dela">
+					<p>©ICCHODA　Portfolio</p>
+				</div>
+			</footer>
+        </div>
+    </div>
+</body>
+</html>

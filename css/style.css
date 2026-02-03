@@ -1,0 +1,856 @@
+@charset "UTF-8";
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #000265;
+    background: url("../images/background5.jpg") no-repeat center center fixed;
+    background-size: cover; /* 画面いっぱいに広げる */
+	
+}
+
+p, h2, h3, h4, h5 {
+	user-select: none;
+}
+
+/* font */
+.dela {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+	font-family: "Dela Gothic One", sans-serif;
+	font-weight: bold;  /* 太文字にする */
+	font-size: 2.5em;
+	color: #000265;
+	text-shadow: -1px 1px 0#E9E213,-2px 2px 0 #E9E213,-3px 3px 0 #E9E213;
+	text-align: center;
+	margin: 0.5em 0;
+}
+
+h3 {
+	font-family: "Dela Gothic One", sans-serif;
+	font-weight: bold;  /* 太文字にする */
+	font-size: 2em;
+	/* color: white; */
+	text-align: center;
+	margin: 0.5em 0 0;
+}
+
+h4 {
+	font-family: "Dela Gothic One", sans-serif;
+	font-size: 2rem;
+	color: #000265;
+	text-align: center;
+	font-weight: 100;
+}
+
+h5 {
+	font-family: "Dela Gothic One", sans-serif;
+	font-size: 1.3rem;
+	color: #000265;
+	font-weight: 100;
+	border-bottom: 3px solid #000265;
+}
+
+.url {
+	color:#E9E213;
+	transition: 0.3s;
+	font-size: 0.8rem;
+	
+}
+
+.url:hover {
+	color:#000265;
+}
+
+.white {
+	color: white;
+}
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #000265;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    z-index: 1000;
+	padding: 1rem;
+}
+
+header .logo {
+	height: 130%;
+}
+
+header .logo a img {
+	height: 100%;
+}
+
+header .menu a {
+	color: #000265;
+	text-decoration: none;
+	background: white;
+	border-radius: 50px;
+	padding: 0.1rem 1rem 0.2rem;
+	margin: 0 0.2rem;
+	transition: 0.3s;
+}
+
+header .menu a:hover {
+	background: #E9E213;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+	margin-top: 3rem;
+}
+
+.footer-top img{
+	width: 300px;
+}
+
+.footer-menu {
+	margin: 2em;
+}
+
+.footer-menu a {
+	color: white;
+	text-decoration: none;
+	background: #E9E213;
+	border-radius: 50px;
+	padding: 0.1rem 1rem 0.2rem;
+	margin: 0 0.2rem;
+	transition: 0.3s;
+}
+
+.footer-menu a:hover {
+	background: white;
+	color: #E9E213;
+}
+
+.footer-btm {
+	background: white;
+	color: #000265;
+	padding: 1em;
+	font-size: 0.7rem;
+	border-radius: 20px 20px 0 0;
+}
+
+/* メイン全体 */
+.container {
+    display: flex;
+    height: 100vh;
+    padding-top: 60px; /* ヘッダー分 */
+}
+
+/* 左側（固定タイトル） */
+.content-left {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    position: sticky;
+    top: 60px;
+	padding: 1rem 0.5rem 1rem 1rem;
+}
+
+.left-inner {
+	width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+	border: 10px solid white;
+	border-radius: 30px;
+	position: relative;
+	overflow: hidden; 
+}
+
+.left-inner .logo {
+	width: 80%;
+	position: absolute;
+	z-index: 3;
+	top: 10%;
+}
+
+.left-inner .txt_f {
+	position: absolute;
+	z-index: 3;
+	top: 10%;
+}
+
+.left-inner .txt_s {
+	position: absolute;
+	z-index: 3;
+	top: 30%;
+}
+
+/* 共通位置 */
+.cat-body,
+.cat-tail {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+}
+
+/* 重なり順 */
+.cat-body {
+  z-index: 2;
+}
+
+.cat-tail {
+  z-index: 3; /* しっぽを少し前に */
+  
+  /* SVGアニメ用おまじない */
+  transform-box: fill-box;
+  transform-origin: 57% 69%; /* ←付け根。あとで微調整！ */
+
+  animation: tailWag 8s ease-in-out infinite;
+}
+
+/* しっぽふりふり */
+@keyframes tailWag {
+  0%   { transform: rotate(12deg); }
+  50%  { transform: rotate(-12deg); }
+  100% { transform: rotate(12deg); }
+}
+
+.left-inner .star {
+	width: 100%;
+	/* margin-bottom: -10px; */
+	position: absolute;
+	z-index: 1;
+	bottom: 5px;
+	animation: rotateAnimation 40s linear infinite;
+}
+
+/* 回転アニメーションの定義 */
+@keyframes rotateAnimation {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* 右側（スクロール領域） */
+.content-right {
+    width: 60%;
+    overflow-y: auto;
+}
+
+.content-right .right-inner {
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+    margin: 1rem 1rem 1rem 0.5rem;
+}
+
+/* TOP-MV */
+.content-right .mv {
+	/* color: white; */
+	text-align: center;
+	padding: 2em;
+}
+.content-right .mv img {
+	margin: 3em 0;
+	width: 520px;
+}
+
+.content-right .mv .title {
+	font-size: 2.5rem;
+}
+
+.content-right .mv .sub-title {
+	font-size: 1.5rem;
+}
+
+/* セクション */
+.section {
+	width: 100%;
+    margin-bottom: 1em;
+    background: white;
+    border-radius: 30px;
+}
+
+/* 制作実績 */
+.top-work {
+	height: 35vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.work-btn {
+	position: absolute;
+}
+
+.work-btn img {
+	border: 3.5px solid #000265;
+	border-radius: 5px;
+}
+
+.updown {
+	animation-name:updown1;   /* アニメーション名の指定 */
+	animation-delay:0s;   /* アニメーションの開始時間指定 */
+	animation-duration: 3s;   /* アニメーション動作時間の指定 */
+	animation-timing-function: ease-in-out;  /* アニメーションの動き指定（徐々に早く）*/
+	animation-iteration-count: infinite; 
+	width: 100%;
+}
+
+.modal {
+  display: none; /* 最初は非表示 */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 600px;
+  color: #000265;
+  position: relative; /* close ボタンの基準 */
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh; /* 画面の高さ制限 */
+}
+
+.modal .close {
+  position: absolute; /* モーダル枠内で固定 */
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  color: #000265;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.modal .close:hover {
+  color: #E9E213;
+}
+
+.modal-body {
+  overflow-y: auto; /* この部分だけスクロール */
+  padding: 2em;
+  scrollbar-width: none;
+  display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+.modal-image img {
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.flex .img {
+	width: 48%;
+}
+
+.flex img {
+	width: 100%;
+}
+
+.flex2 {
+	display: flex;
+	flex-direction: column;
+	width: 48%;
+}
+
+.flex2 .img {
+	width: 100%;
+}
+
+.mag .img {
+	margin-bottom: 1rem;
+}
+
+.mag img {
+	border: 3px solid #000265;
+	border-radius: 5px;
+}
+
+.work1 {
+	transform: rotate(-13deg);
+	left: 5%;
+	top: 4%;
+	width: 18vw;	
+}
+
+.work1 img {
+	border: 0;
+	border-radius: 0;
+}
+
+.work2 {
+	transform: rotate(13deg);
+	right: 5%;
+	top: 74%;
+	width: 22vw;	
+}
+
+.work3 {
+	transform: rotate(-7deg);
+	right: 0;
+	top: 39%;
+	width: 19vw;	
+}
+
+.work4 {
+	transform: rotate(7deg);
+	left: 0;
+	top: 52%;
+	width: 14vw;	
+}
+
+.work5 {
+	transform: rotate(-5deg);
+	left: 7%;
+	bottom: -2%;
+	width: 17vw;	
+}
+
+@keyframes updown1 {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* 猫のスライダー */
+.cat-slider {
+	width: 100%;
+	margin:2em 0;
+}
+
+.cat-slider .slick-img {
+/*	width: 250px!important;*/
+}
+
+.cat-slider .slick-img .cat {
+	width: 100%;
+}
+
+/* プロフィール */
+.top-profile {
+	width: 100%;
+}
+
+.top-profile .profile {
+	display: flex;
+	justify-content: space-around;
+	padding: 2em;
+}
+
+.profile-left {
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-left img {
+	width: 150px;
+}
+
+.profile-right {
+	width: 60%;
+}
+
+.profile-right .name {
+	font-size: 1.4em;
+	margin-bottom: 0.2em;
+}
+
+.profile-right .txt {
+	font-weight: bold;
+	color: white;
+	background: #000265;
+	border-radius: 5px;
+	padding: 0.2em 0.5em;
+	margin-top: 0.5em;
+	display: inline-block;
+}
+
+.profile-right .btm {
+	font-size: 1.7em;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem 0;
+}
+
+.profile-right .marker {
+  position: relative;
+  z-index: 1;
+  padding: 0 10px;
+}
+.profile-right .marker::before {
+  background: #000265;
+  border-radius: 50px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+  z-index: -1;
+}
+.profile-right .marker:hover {
+  color: #fff;
+}
+.profile-right .marker:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+.profile-right .yellow {
+	color: #E9E213;
+	font-size: 1.1em;
+	text-align: end;
+}
+
+.top-hobby {
+	width: 100%;
+	display: none;
+}
+
+.top-hobby .img {
+	text-align: center;
+	margin-bottom: -12px;
+}
+
+.top-hobby .img .cat {
+	width: 300px;
+}
+
+.top-hobby .msg {
+	color: white;
+	text-align: center;
+	margin: 0.5em;
+}
+
+.hobby-cat {
+	text-align: center;
+	padding: 2em;
+}
+
+.hobby-cat .txt {
+	margin-bottom: 1rem;
+}
+
+.hobby-cat .img-box {
+	display: flex;
+	justify-content: space-between;
+}
+
+.hobby-cat .img-box .box{
+	width:30%;
+	display:block;
+}
+.hobby-cat .img-box .box img { 
+	width:100%;
+	filter:grayscale(100%);
+	border-radius: 30px;
+}
+
+.hobby-cat .img-box .box img:hover { 
+	filter:grayscale(0);
+	transition:0.3s;
+}
+
+.hobby-draw {
+	margin-top: 2em ;
+}
+
+.hobby-draw .img-box {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.hobby-draw .img-box .box{
+	width:24%;
+	display:block;
+	background-color: white;
+	border-radius: 30px;
+	padding: 1rem;
+	margin-bottom: 1rem;
+}
+.hobby-draw .img-box .box img { 
+	width:100%;
+}
+
+.hobby-music {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.hobby-music .item {
+	font-family: "Dela Gothic One", sans-serif;
+	color: white;
+	font-size: 1.3rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.hobby-music .item img {
+	width: 100%;
+	border-radius: 30px;
+}
+
+.hobby-music .item1 {
+	width: 20%;
+}
+
+.hobby-music .item1 img {
+	margin-bottom: 0.5rem;
+}
+
+.hobby-music .item1 p {
+	text-align: end;
+}
+
+.hobby-music .item2 {
+	width: 20%;
+	margin-top: 5%;
+	margin-left: -5%;
+}
+
+.hobby-music .item2 img {
+}
+
+.hobby-music .item2 p {
+}
+
+.hobby-music .item3 {
+	width: 50%;
+	margin-top: 2%;
+}
+
+.hobby-music .item3 .img {
+	position: relative;
+}
+
+.hobby-music .item3 .parts1 img {
+	border-radius: 0;
+}
+
+.hobby-music .item3 .parts {
+	position: absolute;
+}
+
+.hobby-music .item3 .parts1 {
+	z-index: 3;
+	margin-top: 5%;
+	left: -5%;
+	width: 12.3vw;
+}
+
+.hobby-music .item3 .parts2 {
+	z-index: 1;
+	right: 0%;
+	width: 25vw;
+}
+
+.hobby-music .item3 .parts3 {
+	z-index: 2;
+	right: 5%;
+	margin-top: 50%;
+	width: 12.3vw;
+}
+
+.hobby-music .item3 p {
+}
+
+.hobby-music .item4 {
+	width: 65%;
+	margin-top: 2%;
+	flex-direction: column-reverse;
+}
+
+.hobby-music .item4 .img {
+	display: flex;
+}
+
+.hobby-music .item4 .parts {
+	margin-right: 1rem;
+}
+
+/* aim */
+.fv-music {
+	width: 100%;
+	height: 46.5vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin-top: 30px;
+	border-radius: 30px;
+	border: 10px solid white;
+}
+
+.fv-music-img {
+	position: absolute;
+}
+
+.fv-music img {
+	width: 100%;	
+}
+
+.fv-music .txt {
+	left: 26%;
+	top: 5%;
+	color: white;
+	font-size: 2em;
+}
+
+.fv-music .big {
+	font-size: 1.7em;
+}
+
+.fv-music .img1 {
+	left: 0;
+	top: 4%;
+	width: 15vw;	
+}
+
+.fv-music .img2 {
+	left: 0;
+	top: 27%;
+	width: 34vw;	
+}
+
+.fv-music .img3 {
+	left: 0;
+	top: 65%;
+	width: 16.5vw;	
+}
+
+.fv-music .img4 {
+	left: 26%;
+	top: 47%;
+	width: 12vw;	
+}
+
+.fv-music .img5 {
+	left: 43%;
+	top: 40%;
+	width: 15vw;
+}
+
+.fv-music .img6 {
+	right: 1%;
+	top: -9%;
+	width: 13vw;	
+}
+
+.fv-music .img7 {
+	transform: rotate(-15deg);
+	right: 13%;
+	top: 16%;
+	width: 11vw;	
+}
+
+.fv-music .img8 {
+	right: 2%;
+	top: 33%;
+	width: 12.5vw;	
+}
+
+.fv-music .img9 {
+	right: 0;
+	bottom: 3%;
+	width: 17vw;	
+}
+
+/* ゆらゆら動くアニメーション */
+@keyframes sway {
+	0%   { transform: rotate(0deg) translateY(0); }
+	  10%  { transform: rotate(1.5deg) translateY(-1px); }
+	  20%  { transform: rotate(3deg) translateY(-2px); }
+	  30%  { transform: rotate(1.5deg) translateY(-1px); }
+	  40%  { transform: rotate(0deg) translateY(0); }
+	  50%  { transform: rotate(-1.5deg) translateY(1px); }
+	  60%  { transform: rotate(-3deg) translateY(2px); }
+	  70%  { transform: rotate(-1.5deg) translateY(1px); }
+	  80%  { transform: rotate(0deg) translateY(0); }
+	  100% { transform: rotate(0deg) translateY(0); }
+}
+
+.fv-music .img4 img {
+	animation-delay: 3s;
+	animation: sway 5s infinite ease-in-out;
+	  display: block;
+	  transform-origin: center center; /* 中心を基準に回転 */
+}
+
+.fv-music .img5 img {
+	animation-delay: 0s;
+	animation: sway 2s infinite ease-in-out;
+	display: block;
+}
+
+/*
+.visual {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+*/
