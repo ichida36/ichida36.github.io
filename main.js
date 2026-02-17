@@ -22,12 +22,30 @@ $(document).ready(function(){
     pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
     pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
     responsive: [
-      { 
-		breakpoint: 750,
-		 settings: { 
-			slidesToShow: 3 // 画面幅750px以下でスライド3枚表示
-		 }
-	  }
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 901,
+        settings: {
+          slidesToShow: 2.5
+        }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 381,
+        settings: {
+          slidesToShow: 2
+        }
+      }
     ]
   });
 

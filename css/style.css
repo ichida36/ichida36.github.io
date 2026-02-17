@@ -18,11 +18,18 @@ p, h2, h3, h4, h5 {
 	user-select: none;
 }
 
+.tab {
+	display: none;
+}
+
+.sp-none {
+}
+
 /* font */
 .dela {
-  font-family: "Dela Gothic One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "Dela Gothic One", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 h2 {
@@ -316,6 +323,11 @@ footer {
 
 .work-btn {
 	position: absolute;
+	transition: 0.3s;
+}
+
+.work-btn:hover {
+	opacity: 0.6;
 }
 
 .work-btn img {
@@ -333,52 +345,60 @@ footer {
 }
 
 .modal {
-  display: none; /* 最初は非表示 */
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
+	display: none; /* 最初は非表示 */
+	position: fixed;
+	z-index: 2000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	justify-content: center;
+	align-items: center;
 }
 
 .modal-content {
-  background-color: #dae1e8;
-  border-radius: 20px;
-  width: 80%;
-  max-width: 800px;
-  padding: 3em;
-  color: #000265;
-  position: relative; /* close ボタンの基準 */
-  display: flex;
-  flex-direction: column;
-  max-height: 80vh; /* 画面の高さ制限 */
+	background-color: #dae1e8;
+	border-radius: 20px;
+	width: 80%;
+	max-width: 790px;
+	padding: 3em;
+	color: #000265;
+	position: relative; /* close ボタンの基準 */
+	display: flex;
+	flex-direction: column;
+	max-height: 80vh; /* 画面の高さ制限 */
 }
 
 .modal .close {
-  position: absolute; /* モーダル枠内で固定 */
-  top: 20px;
-  right: 20px;
-  font-size: 2em;
-  color: #000265;
-  cursor: pointer;
-  z-index: 10;
-  transition: 0.3s;
+	position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2em;
+    color: #dae1e8;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    background: #000265;
+	border: 3px solid #000265;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal .close:hover {
-  color: #E9E213;
+	color: #e9e213;
 }
 
 .modal-body {
-  overflow-y: auto; /* この部分だけスクロール */
-  scrollbar-width: none;
-  display: flex;
-    gap: 1em;
-    flex-direction: column;
+	overflow-y: auto; /* この部分だけスクロール */
+	scrollbar-width: none;
+	display: flex;
+	gap: 1em;
+	flex-direction: column;
 }
 
 .work-year{
@@ -388,15 +408,13 @@ footer {
 }
 
 .modal-image img {
-  max-width: 250px;
-  border-radius: 10px;
+	max-width: 250px;
+	border-radius: 10px;
 }
 
 @media (max-width: 600px) {
-  .modal-body {
-    flex-direction: column;
-    align-items: center;
-  }
+	.modal-body {
+	}
 }
 
 
@@ -411,12 +429,8 @@ footer {
     margin-bottom: 0.8rem;
 }
 
-.flex .img:nth-child(3) {
-    margin-bottom: 0;
-}
-
-.flex .img:nth-child(4) {
-    margin-bottom: 0;
+.flex .btm0 {
+    margin-bottom: 0 !important;
 }
 
 .flex img {
@@ -429,12 +443,12 @@ footer {
 	width: 48.6%;
 }
 
-.flex2 .img:nth-child(2) {
-    margin-bottom: 0;
+.flex2 .btm0 {
+    margin-bottom: 0 !important;
 }
 
 .flex2 .img {
-	width: 100%;
+	width: 100% !important;
 }
 
 .mag .img {
@@ -602,7 +616,7 @@ footer {
 }
 
 .top-news {
-	margin: 3.5rem 0;
+	margin: 3rem 0;
 	width: 100%;
 }
 
@@ -633,6 +647,7 @@ footer {
 	flex-direction: column;
 	align-items: center;
 	margin-left: 2rem;
+	justify-content: center;
 }
 
 .news-h3 {
@@ -644,6 +659,7 @@ footer {
 	position: relative;
 	display: flex;
 	justify-content: center;
+	height: 210px;
 }
 
 .news-img .s1 {
@@ -670,26 +686,26 @@ footer {
 }
 
 .pyon {
-  animation: pyon 0.9s ease-out 0s 1;
-  transform-origin: bottom center; /* つぶれ/伸びが足元基準になる */
+	animation: pyon 0.9s ease-out 0s 1;
+	transform-origin: bottom center; /* つぶれ/伸びが足元基準になる */
 }
 
 @keyframes pyon {
-  0%   { transform: translateY(0) scaleX(1) scaleY(1); }
+	0%   { transform: translateY(0) scaleX(1) scaleY(1); }
 
-  /* ほぼ沈まない：着地のつぶれを最小に */
-  12%  { transform: translateY(0) scaleX(1.03) scaleY(0.97); }
+	/* ほぼ沈まない：着地のつぶれを最小に */
+	12%  { transform: translateY(0) scaleX(1.03) scaleY(0.97); }
 
-  /* 上に跳ぶ（ここがピーク） */
-  55%  { transform: translateY(-18px) scaleX(0.98) scaleY(1.04); }
+	/* 上に跳ぶ（ここがピーク） */
+	55%  { transform: translateY(-18px) scaleX(0.98) scaleY(1.04); }
 
-  /* 戻ってくる途中 */
-  /* 75%  { transform: translateY(-6px) scaleX(1.00) scaleY(1.01); } */
+	/* 戻ってくる途中 */
+	/* 75%  { transform: translateY(-6px) scaleX(1.00) scaleY(1.01); } */
 
-  /* 着地：少しだけつぶれて戻る */
-  88%  { transform: translateY(0) scaleX(1.01) scaleY(0.99); }
+	/* 着地：少しだけつぶれて戻る */
+	88%  { transform: translateY(0) scaleX(1.01) scaleY(0.99); }
 
-  100% { transform: translateY(0) scaleX(1) scaleY(1); }
+	100% { transform: translateY(0) scaleX(1) scaleY(1); }
 }
 
 .news-img img {

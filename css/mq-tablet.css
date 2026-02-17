@@ -5,4 +5,362 @@
 
 @media (max-width: 1024px) {
     /* タブレット以下 */
+/* Reset */
+* {
+
+}
+
+body {
+
+}
+
+p, h2, h3, h4, h5 {
+}
+
+.tab {
+	display: block;
+}
+
+
+/* font */
+.dela {
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+}
+
+h5 {
+}
+
+.url {
+}
+
+.url:hover {
+}
+
+.white {
+}
+
+/* ヘッダー */
+header {
+    font-size: 1.3rem;
+}
+
+header .logo {
+}
+
+header .logo a img {
+}
+
+header .menu a {
+}
+
+header .menu a:hover {
+}
+
+/* フッター */
+footer {
+}
+
+.footer-top img{
+    width: 240px;
+}
+
+.footer-menu {
+}
+
+.footer-menu a {
+}
+
+.footer-menu a:hover {
+}
+
+.footer-btm {
+}
+
+/* メイン全体 */
+.container {
+}
+
+/* 左側（固定タイトル） */
+.content-left {
+    font-size: 2.5rem;
+}
+
+.left-inner {
+}
+
+.left-inner .logo {
+}
+
+.left-inner .left-inner_top {
+    top: 15%;
+}
+
+.left-inner_top .txt_f {
+}
+
+.left-inner_top .txt_s {
+}
+
+.left-inner_top .txt_t {
+}
+
+/* 共通位置 */
+.cat-body,
+.cat-tail {
+    width: 115%;
+}
+
+/* 重なり順 */
+.cat-body {
+}
+
+.cat-tail {
+}
+
+/* しっぽふりふり */
+
+.left-inner .star {
+}
+
+/* 回転アニメーションの定義 */
+
+
+/* 右側（スクロール領域） */
+.content-right {
+}
+
+.content-right .right-inner {
+}
+
+/* TOP-MV */
+.content-right .mv {
+}
+.content-right .mv img {
+    width: 380px;
+}
+
+.content-right .mv .title {
+    font-size: 2rem;
+}
+
+.content-right .mv .sub-title {
+    font-size: 1.3rem;
+}
+
+/* セクション */
+.section {
+    margin: 1rem 0;
+}
+
+/* 制作実績 */
+.top-work {
+    height: 48vw;
+}
+
+.work-btn {
+}
+
+.work-btn:hover {
+}
+
+.work-btn img {
+    border: 3.5px solid #000265;
+}
+
+.updown {
+}
+
+.modal {
+}
+
+.modal-content {
+    width: 90%;
+}
+
+.modal .close {
+}
+
+.modal .close:hover {
+}
+
+.modal-body {
+}
+
+.work-year{
+}
+
+.modal-image img {
+}
+
+@media (max-width: 600px) {
+    .modal-body {
+    }
+}
+
+
+.flex {
+}
+
+.flex .img {
+}
+
+.flex img {
+}
+
+.flex2 {
+}
+
+.flex2 .img {
+}
+
+.mag .img {
+}
+
+.mag img {
+}
+
+.modal .note {
+    font-size: 0.7rem;
+}
+
+.work1 {
+    width: 20vw;
+}
+
+.work1 img {
+    border: 0;
+}
+
+.work2 {
+    top: 77%;
+}
+
+.work3 {
+    top: 47%;
+}
+
+.work4 {
+    top: 60%;
+    width: 15vw;
+}
+
+.work5 {
+    width: 18vw;
+}
+
+/* 猫のスライダー */
+.cat-slider {
+}
+
+.cat-slider .slick-img {
+    height: 180px !important;
+}
+
+.cat-slider .slick-img .cat {
+}
+
+/* プロフィール */
+.top-profile {
+}
+
+.top-profile .profile {
+    flex-direction: column;
+}
+
+.profile-left {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.profile-left img {
+    width: 110px;
+}
+
+.profile-right {
+    width: 100%;
+}
+
+.profile-right .name {
+    font-size: 1.3rem;
+}
+
+.profile-right .txt {
+}
+
+.profile-right .btm {
+    font-size: 1.4rem;
+}
+
+.profile-right .marker {
+}
+.profile-right .marker::before {
+}
+
+.profile-right .marker:hover {
+}
+.profile-right .marker:hover::before {
+}
+
+.profile-right .yellow {
+}
+
+.top-news {
+}
+
+.top-news_inner {
+    justify-content: space-between;
+}
+
+.top-news_inner_left {
+    width: 65%;
+}
+
+.top-news_inner_left .news_row {
+}
+
+.top-news_inner_left .news_row:last-child {
+}
+
+.top-news_inner_right {
+    margin-left: 0;
+    width: 32%;
+}
+
+.news-h3 {
+    margin-bottom: 1rem;
+}
+
+.top-news_inner_right .news-img {
+    height: 150px;
+}
+
+.news-img .s1 {
+}
+
+.news-img .s2 {
+}
+
+.news-img .s3 {
+}
+
+.news-img .cat8 {
+}
+
+.pyon {
+}
+
+.news-img img {
+    width: 110px;
+}
+
 }
