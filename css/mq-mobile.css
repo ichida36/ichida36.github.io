@@ -13,6 +13,7 @@
 
 body {
     font-size: 15px;
+    background: url("../images/background-tab.jpg") no-repeat center center fixed;
 }
 
 p, h2, h3, h4, h5 {
@@ -337,6 +338,7 @@ footer {
 
 .profile-right .btm {
     font-size: 1.2rem;
+    justify-content: space-around;
 }
 
 .profile-right .marker {
