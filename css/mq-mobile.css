@@ -12,9 +12,8 @@
 }
 
 body {
-    min-height: 100dvh;
-    background: url("../images/background-tab.jpg") no-repeat center center;
-    background-size: cover;
+    background: url("../images/background-tab.jpg") repeat;
+    background-size: auto;
 }
 
 p, h2, h3, h4, h5 {
