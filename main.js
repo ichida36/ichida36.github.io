@@ -41,6 +41,12 @@ $(document).ready(function(){
         }
       },
       {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 2.5
+        }
+      },
+      {
         breakpoint: 381,
         settings: {
           slidesToShow: 2

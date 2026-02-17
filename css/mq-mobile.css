@@ -296,6 +296,10 @@ footer {
     margin: 2rem 0;
 }
 
+.cat-slider .slick-list {
+    margin: 0 -1rem;
+}
+
 .cat-slider .slick-img {
     height: 150px !important;
 }
