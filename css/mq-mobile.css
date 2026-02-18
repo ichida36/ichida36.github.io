@@ -59,6 +59,7 @@ h5 {
 /* ヘッダー */
 header {
     font-size: 1.3rem;
+    padding: 1rem 0.5rem 1rem 1rem;
 }
 
 header .logo {
