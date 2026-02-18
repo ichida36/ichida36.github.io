@@ -21,31 +21,39 @@ $(document).ready(function(){
     arrows: false, // 矢印非表示
     pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
     pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
+    waitForAnimate: false,
+    rtl: false,  
     responsive: [
       {
-        breakpoint: 1025,
+        breakpoint: 1470,
         settings: {
           slidesToShow: 3
         }
       },
       {
-        breakpoint: 901,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 2.5
         }
       },
-      {
-        breakpoint: 769,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 481,
-        settings: {
-          slidesToShow: 2.5
-        }
-      },
+      // {
+      //   breakpoint: 901,
+      //   settings: {
+      //     slidesToShow: 2.5
+      //   }
+      // },
+      // {
+      //   breakpoint: 769,
+      //   settings: {
+      //     slidesToShow: 3
+      //   }
+      // },
+      // {
+      //   breakpoint: 481,
+      //   settings: {
+      //     slidesToShow: 2.5
+      //   }
+      // },
       {
         breakpoint: 381,
         settings: {
@@ -53,6 +61,10 @@ $(document).ready(function(){
         }
       }
     ]
+  });
+
+  $(window).on('load resize', function(){
+    $('.cat-slider').slick('setPosition');
   });
 
   const modal = document.getElementById('work-modal');

@@ -531,6 +531,7 @@ footer {
 
 .cat-slider .slick-img .cat {
 	height: 100%;
+	width: auto;
 }
 
 /* プロフィール */
