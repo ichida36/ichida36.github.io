@@ -198,7 +198,7 @@ header .menu a:hover {
 	left: 0;
 	width: 100%;
 	height: calc(100dvh - 60px);
-	background: #DFF0F6 url("../images/sp-menu.png")
+	background: #DFF0F6 url("../images/sp-menu.svg")
             no-repeat
             right 20px bottom 30px;
 	opacity: 0;
