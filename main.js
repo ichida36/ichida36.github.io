@@ -92,5 +92,45 @@ $(document).ready(function(){
 });
 
 
+/* ハンバーガーメニュー */
+document.addEventListener("DOMContentLoaded", function () {
+
+  const btn = document.querySelector('.js-hamburger');
+  const menu = document.querySelector('.js-sp-menu');
+  const overlay = document.querySelector('.js-sp-overlay');
+  const links = document.querySelectorAll('.js-sp-link');
+
+  if (!btn) return; // 念のため存在チェック
+
+  function openMenu(){
+    document.body.classList.add('menu-open');
+    btn.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeMenu(){
+    document.body.classList.remove('menu-open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+
+  btn.addEventListener('click', function(){
+    document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener('click', closeMenu);
+
+  links.forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeMenu();
+  });
+
+});
+
+
+
 
 

@@ -36,7 +36,7 @@
 
 
 <body>
-    <header>
+    <!-- <header>
         <div class="logo">
 			<a href=""><img src="images/logo6.png" alt="logo"></a>
 		</div>
@@ -45,7 +45,41 @@
 			<a href="#profile">PROFILE</a>
 			<a href="#news">NEWS</a>
 		</div>
-    </header>
+    </header> -->
+	<header class="js-header">
+		<div class="logo">
+			<a href=""><img src="images/logo6.png" alt="logo"></a>
+		</div>
+
+		<!-- 既存PCメニュー（そのまま） -->
+		<div class="menu dela pc-menu">
+			<a href="#work">WORK</a>
+			<a href="#profile">PROFILE</a>
+			<a href="#news">NEWS</a>
+		</div>
+
+		<!-- SP用ハンバーガー（追加） -->
+		<button class="hamburger js-hamburger"
+			type="button"
+			aria-label="メニュー"
+			aria-controls="sp-menu"
+			aria-expanded="false">
+			<span></span><span></span><span></span>
+		</button>
+	</header>
+
+	<!-- SPメニュー（上からにょき：追加） -->
+	<nav id="sp-menu" class="sp-menu dela js-sp-menu" aria-hidden="true">
+		<div class="sp-menu_inner">
+			<a href="#work" class="js-sp-link">WORK<span class="sub-menu">わたしの制作実績</span></a>
+			<a href="#profile" class="js-sp-link">PROFILE<span class="sub-menu">プロフィール</span></a>
+			<a href="#news" class="js-sp-link">NEWS<span class="sub-menu">お知らせ</span></a>
+		</div>
+	</nav>
+
+	<!-- 背景（追加） -->
+	<div class="sp-overlay js-sp-overlay" aria-hidden="true"></div>
+
 
     <div class="container">
         <div class="content-left">

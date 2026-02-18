@@ -125,6 +125,119 @@ header .menu a:hover {
 	background: #E9E213;
 }
 
+/* --- SP用：通常は隠す（PCでは出さない） --- */
+.hamburger,
+.sp-menu,
+.sp-overlay {
+	display: none;
+}
+
+/* --- ハンバーガー（×変形アニメ） --- */
+.hamburger {
+	width: 44px;
+	height: 44px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.hamburger span {
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	height: 2px;
+	background: #fff;
+	transition: transform .25s ease, opacity .25s ease, top .25s ease;
+}
+
+.hamburger span:nth-child(1) { top: 14px; }
+.hamburger span:nth-child(2) { top: 21px; }
+.hamburger span:nth-child(3) { top: 28px; }
+
+/* --- SPメニュー：上から「にょき」 --- */
+.sp-menu {
+	position: fixed;
+	top: 60px; /* headerがheight:60pxなのでここは合わせる */
+	width: 100%;
+	transform: translateY(-110%);
+	opacity: 0;
+	pointer-events: none;
+	transition: transform .28s ease, opacity .28s ease;
+	z-index: 999; /* header(1000)の下でOKなら999 */
+}
+
+.sp-menu_inner {
+	margin: 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.sp-menu a {
+	color: #000265;
+	text-decoration: none;
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	transition: 0.3s;
+}
+
+.sp-menu a .sub-menu {
+	font-size: 1rem;
+}
+
+.sp-menu a:hover {
+	color: #E9E213;
+}
+
+/* 背景オーバーレイ */
+.sp-overlay {
+	position: fixed;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	height: calc(100dvh - 60px);
+	background: #DFF0F6 url("../images/sp-menu.png")
+            no-repeat
+            right 20px bottom 30px;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .28s ease;
+	z-index: 998;
+}
+
+/* --- 開いた状態（bodyにクラスが付く） --- */
+body.menu-open .sp-menu {
+	transform: translateY(0);
+	opacity: 1;
+	pointer-events: auto;
+}
+
+body.menu-open .sp-overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* ×に変形 */
+body.menu-open .hamburger span:nth-child(1) {
+	top: 21px;
+	transform: rotate(45deg);
+}
+body.menu-open .hamburger span:nth-child(2) {
+	opacity: 0;
+}
+body.menu-open .hamburger span:nth-child(3) {
+	top: 21px;
+	transform: rotate(-45deg);
+}
+
+/* お好み：メニュー開いてる時スクロール止めたいなら */
+body.menu-open {
+	overflow: hidden;
+}
+
+
 /* フッター */
 footer {
     text-align: center;

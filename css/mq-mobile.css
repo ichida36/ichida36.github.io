@@ -74,6 +74,11 @@ header .menu a {
 header .menu a:hover {
 }
 
+/* スマホだけ切り替え（既存PCメニューを消してハンバーガーを出す） */
+.pc-menu { display: none; }
+.hamburger { display: block; }
+.sp-menu, .sp-overlay { display: block; }
+
 /* フッター */
 footer {
 }
