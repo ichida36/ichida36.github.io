@@ -132,7 +132,7 @@ $(window).on('load', function () {
         $(this).remove();
         $('body').removeClass('is-loading');
       });
-    }, 2000); // 表示時間（2秒）
+    }, 3000); // 表示時間（3秒）
 
     // 訪問済みにする
     sessionStorage.setItem('visited', 'true');
