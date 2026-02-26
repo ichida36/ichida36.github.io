@@ -291,6 +291,14 @@ footer {
     width: 28vw;
 }
 
+.work6 {
+	width: 22vw;	
+}
+
+.work6 img {
+	border: 0;
+}
+
 /* 猫のスライダー */
 .cat-slider {
     margin: 2rem 0;

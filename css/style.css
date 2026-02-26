@@ -458,6 +458,9 @@ footer {
 	width: 100%;
 }
 
+.modal.is-open { display: flex; }
+body.modal-open { overflow: hidden; }
+
 .modal {
 	display: none; /* 最初は非表示 */
 	position: fixed;
@@ -565,6 +568,25 @@ footer {
 	width: 100% !important;
 }
 
+.flex3 {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.flex3 .img {
+	width: 24.6%;
+    margin-bottom: 0.8rem;
+}
+
+.flex3 .btm0 {
+    margin-bottom: 0 !important;
+}
+
+.flex3 img {
+	width: 100%;
+}
+
 .mag .img {
 	margin-bottom: 1rem;
 }
@@ -619,6 +641,33 @@ footer {
 	left: 7%;
 	bottom: -2%;
 	width: 17vw;	
+}
+
+.work6 {
+	transform: rotate(5deg);
+	right: 10%;
+	top: -1%;
+	width: 10vw;	
+}
+
+.work6 img {
+	border: 0;
+	border-radius: 0;
+}
+
+.pdf {
+	text-decoration: none;
+	padding: 0.2rem 1rem 0.4rem;
+	background: #000265;
+	color: #fff;
+	border-radius: 30px;
+	font-size: 0.8rem;
+	width: fit-content;
+	transition: 0.3s;
+}
+
+.pdf:hover {
+	background: #e9e213;
 }
 
 @keyframes updown1 {

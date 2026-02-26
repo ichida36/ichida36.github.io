@@ -1,136 +1,121 @@
-/**
- * 
- */
-
-$(document).ready(function(){
-
-  // slick 初期化
-  $('.visual, .slick1').slick({
-    autoplay: true,
-    dots: true,
-    arrows: true
-  });
-
-  $('.cat-slider').slick({
-    autoplay: true, // 自動でスクロール
-    autoplaySpeed: 0, // 自動再生のスライド切り替えまでの時間を設定
-    speed: 5000, // スライドが流れる速度を設定
-    cssEase: "linear", // スライドの流れ方を等速に設定
-    slidesToShow: 4, // 表示するスライドの数
-    swipe: false, // 操作による切り替えはさせない
-    arrows: false, // 矢印非表示
-    pauseOnFocus: false, // スライダーをフォーカスした時にスライドを停止させるか
-    pauseOnHover: false, // スライダーにマウスホバーした時にスライドを停止させるか
-    waitForAnimate: false,
-    rtl: false,  
-    responsive: [
-      {
-        breakpoint: 1470,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 2.5
-        }
-      },
-      // {
-      //   breakpoint: 901,
-      //   settings: {
-      //     slidesToShow: 2.5
-      //   }
-      // },
-      // {
-      //   breakpoint: 769,
-      //   settings: {
-      //     slidesToShow: 3
-      //   }
-      // },
-      // {
-      //   breakpoint: 481,
-      //   settings: {
-      //     slidesToShow: 2.5
-      //   }
-      // },
-      {
-        breakpoint: 381,
-        settings: {
-          slidesToShow: 2
-        }
-      }
-    ]
-  });
-
-  $(window).on('load resize', function(){
-    $('.cat-slider').slick('setPosition');
-  });
-
-  const modal = document.getElementById('work-modal');
-  const modalBody = modal.querySelector('.modal-body');
-  const closeBtn = modal.querySelector('.close');
-
-  document.querySelectorAll('.open-modal').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      modalBody.innerHTML = this.dataset.content; // HTMLごと差し込み
-      modal.style.display = 'flex';
+$(function () {
+  /* =========================
+    Slick
+  ========================== */
+  // もし要素が無ければ何もしない（エラー防止）
+  if ($('.visual, .slick1').length) {
+    $('.visual, .slick1').slick({
+      autoplay: true,
+      dots: true,
+      arrows: true
     });
+  }
+
+  if ($('.cat-slider').length) {
+    $('.cat-slider').slick({
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 5500,
+      cssEase: "linear",
+      slidesToShow: 4,
+      swipe: false,
+      arrows: false,
+      pauseOnFocus: false,
+      pauseOnHover: false,
+      waitForAnimate: false,
+      rtl: false,
+      responsive: [
+        { breakpoint: 1470, settings: { slidesToShow: 3 } },
+        { breakpoint: 1200, settings: { slidesToShow: 2.5 } },
+        { breakpoint: 381,  settings: { slidesToShow: 2 } }
+      ]
+    });
+
+    // レイアウト崩れ対策
+    $(window).on('load resize', function () {
+      $('.cat-slider').slick('setPosition');
+    });
+  }
+
+  /* =========================
+    SP Hamburger Menu
+  ========================== */
+  const $body = $('body');
+  const $hamburger = $('.js-hamburger');
+  const $spMenu = $('.js-sp-menu');
+  const $overlay = $('.js-sp-overlay');
+  const $spLinks = $('.js-sp-link');
+
+  function openMenu() {
+    $body.addClass('menu-open');
+    $hamburger.attr('aria-expanded', 'true');
+    $spMenu.attr('aria-hidden', 'false');
+  }
+
+  function closeMenu() {
+    $body.removeClass('menu-open');
+    $hamburger.attr('aria-expanded', 'false');
+    $spMenu.attr('aria-hidden', 'true');
+  }
+
+  // 存在する時だけ動かす
+  if ($hamburger.length) {
+    $hamburger.on('click', function () {
+      $body.hasClass('menu-open') ? closeMenu() : openMenu();
+    });
+
+    $overlay.on('click', closeMenu);
+    $spLinks.on('click', closeMenu);
+  }
+
+  /* =========================
+    Work Modal
+  ========================== */
+  const $modal = $('#work-modal');
+  const $modalBody = $modal.find('.modal-body');
+  const $closeBtn = $modal.find('.close');
+
+  // モーダル開閉：CSSで .is-open を使う前提
+  // CSS側に下記を追加推奨：
+  // .modal { display:none; }
+  // .modal.is-open { display:flex; }
+  function openModal(html) {
+    // SPメニューが開いてたら閉じる（スマホ事故防止）
+    closeMenu();
+
+    $modalBody.html(html);
+    $modal.addClass('is-open');
+    $body.addClass('modal-open'); // 背景スクロール固定用（任意）
+    $modalBody.scrollTop(0);
+  }
+
+  function closeModal() {
+    $modal.removeClass('is-open');
+    $body.removeClass('modal-open');
+    $modalBody.empty();
+    $modalBody.scrollTop(0);
+  }
+
+  // WORKボタン：イベント委譲（後から増やしてもOK）
+  $(document).on('click', '.open-modal', function (e) {
+    e.preventDefault();
+    const html = $(this).attr('data-content') || '';
+    openModal(html);
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+  // ×で閉じる
+  $closeBtn.on('click', closeModal);
+
+  // 背景クリックで閉じる
+  $modal.on('click', function (e) {
+    if (e.target === this) closeModal();
   });
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+  // ESCで閉じる（メニューも閉じる）
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if ($modal.hasClass('is-open')) closeModal();
+      if ($body.hasClass('menu-open')) closeMenu();
     }
   });
-
 });
-
-
-/* ハンバーガーメニュー */
-document.addEventListener("DOMContentLoaded", function () {
-
-  const btn = document.querySelector('.js-hamburger');
-  const menu = document.querySelector('.js-sp-menu');
-  const overlay = document.querySelector('.js-sp-overlay');
-  const links = document.querySelectorAll('.js-sp-link');
-
-  if (!btn) return; // 念のため存在チェック
-
-  function openMenu(){
-    document.body.classList.add('menu-open');
-    btn.setAttribute('aria-expanded', 'true');
-    menu.setAttribute('aria-hidden', 'false');
-  }
-
-  function closeMenu(){
-    document.body.classList.remove('menu-open');
-    btn.setAttribute('aria-expanded', 'false');
-    menu.setAttribute('aria-hidden', 'true');
-  }
-
-  btn.addEventListener('click', function(){
-    document.body.classList.contains('menu-open') ? closeMenu() : openMenu();
-  });
-
-  overlay.addEventListener('click', closeMenu);
-
-  links.forEach(function(link){
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeMenu();
-  });
-
-});
-
-
-
-
-

@@ -40,7 +40,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 h5 {
@@ -296,6 +296,14 @@ footer {
 
 .work5 {
     width: 33vw;
+}
+
+.work6 {
+	width: 20vw;	
+}
+
+.work6 img {
+	border: 0;
 }
 
 /* 猫のスライダー */
