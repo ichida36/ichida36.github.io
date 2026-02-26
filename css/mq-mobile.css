@@ -435,14 +435,15 @@ footer {
 }
 
 .loading-img {
-	width: 200px;
+	width: 180px;
 }
 
 .loading-text {
-	font-size: 1.6rem;
+	font-size: 1.5rem;
 }
 
 .dots {
+    animation: loadingDots 1.2s steps(4, end) infinite;
 }
 
 body.is-loading {

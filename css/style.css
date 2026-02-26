@@ -909,7 +909,6 @@ body.modal-open { overflow: hidden; }
 
 .dots {
 	display: inline-block;
-	/* width: 2.2em; */
 	animation: loadingDots 1.2s steps(4, end) infinite;
 }
 

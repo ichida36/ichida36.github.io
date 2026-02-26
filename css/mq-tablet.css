@@ -387,6 +387,7 @@ footer {
 }
 
 .dots {
+    animation: loadingDots 1.2s steps(4, end) infinite;
 }
 
 body.is-loading {
