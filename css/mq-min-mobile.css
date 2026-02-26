@@ -433,9 +433,6 @@ footer {
 .dots {
 }
 
-@keyframes loadingDots {
-}
-
 body.is-loading {
 }
 
