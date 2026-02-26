@@ -427,4 +427,28 @@ footer {
     width: 100px;
 }
 
+/* ===== LOADING ===== */
+#loading {
+}
+
+.loading-inner {
+}
+
+.loading-img {
+	width: 200px;
+}
+
+.loading-text {
+	font-size: 1.6rem;
+}
+
+.dots {
+}
+
+@keyframes loadingDots {
+}
+
+body.is-loading {
+}
+
 }

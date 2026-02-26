@@ -875,3 +875,53 @@ body.modal-open { overflow: hidden; }
 .news-img img {
 	width: 150px;
 }
+
+/* ===== LOADING ===== */
+#loading {
+	position: fixed;
+	inset: 0;
+	z-index: 5000;
+	background: #DFF0F6; /* サイト世界観に合わせてOK */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.loading-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.loading-img {
+	width: 250px;
+	height: auto;
+}
+
+.loading-text {
+	font-size: 2rem;
+	color: #000265;
+	letter-spacing: 0.08em;
+	padding-left: 2rem;
+	padding-top: 1rem;
+}
+
+.dots {
+	display: inline-block;
+	/* width: 2.2em; */
+	animation: loadingDots 1.2s steps(4, end) infinite;
+}
+
+@keyframes loadingDots {
+	0%   { clip-path: inset(0 100% 0 0); }
+	25%  { clip-path: inset(0 66% 0 0); }
+	50%  { clip-path: inset(0 33% 0 0); }
+	75%  { clip-path: inset(0 0% 0 0); }
+	100% { clip-path: inset(0 100% 0 0); }
+}
+
+body.is-loading {
+	overflow: hidden;
+}
+

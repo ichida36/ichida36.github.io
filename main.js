@@ -119,3 +119,27 @@ $(function () {
     }
   });
 });
+
+$(window).on('load', function () {
+
+  // sessionStorage にフラグがあるか確認
+  if (!sessionStorage.getItem('visited')) {
+
+    $('body').addClass('is-loading');
+
+    setTimeout(function () {
+      $('#loading').fadeOut(600, function () {
+        $(this).remove();
+        $('body').removeClass('is-loading');
+      });
+    }, 2000); // 表示時間（2秒）
+
+    // 訪問済みにする
+    sessionStorage.setItem('visited', 'true');
+
+  } else {
+    // 2回目以降は即削除
+    $('#loading').remove();
+  }
+
+});
